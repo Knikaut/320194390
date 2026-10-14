@@ -49,6 +49,7 @@ aside{display:flex;flex-direction:column;min-width:0;background:var(--paper);bor
 h1{font:400 28px/1.1 var(--f-display);margin:0;text-wrap:balance}
 .lead{margin:0;color:var(--muted);font-size:13.5px}
 .tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools .btn{padding:6px 10px;font-size:13.5px}
 .search{flex:1 1 180px;min-width:0;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg)}
 .btn{border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:7px 12px;cursor:pointer;white-space:nowrap}
 .btn:hover{border-color:var(--muted)}
@@ -261,6 +262,76 @@ textarea{width:100%;min-height:180px;font:12px/1.4 var(--f-mono);border:1px soli
   .item{padding:9px 16px}
   .card-top,.pane{padding-left:16px;padding-right:16px}
 }
+/* ===== Фильм «Город на карте» ===== */
+.film-btn{border-color:var(--steppe);color:var(--steppe)}
+.sheet.film{max-width:1060px;gap:14px}
+.filmwrap{background:#0d1110;border-radius:8px;overflow:hidden;line-height:0}
+.filmwrap video{display:block;width:100%;max-height:68vh;background:#0d1110}
+.film-lead{font-size:13.5px;color:var(--muted)}
+.chaps{display:flex;gap:6px;flex-wrap:wrap}
+.chaps .chip{color:var(--ink);font-variant-numeric:tabular-nums;font-family:var(--f-mono);font-size:12px}
+.chaps .chip[aria-pressed="true"]{background:var(--brick);border-color:var(--brick);color:#fff}
+.film-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.film-note{font-size:12.5px;color:var(--muted);margin-left:auto}
+
+/* ===== Мои места ===== */
+.add-btn{border-color:var(--brick);color:var(--brick)}
+.pin.my{background:var(--steppe);border-style:solid}
+.pin.my span{font-size:13px}
+.lsect{padding:14px 20px 6px;display:flex;align-items:baseline;gap:8px;border-top:1px solid var(--rule);margin-top:6px}
+.lsect b{font:400 15px/1.2 var(--f-display);font-weight:400}
+.lsect span{font:500 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--steppe)}
+.item.mine .num{border-color:var(--steppe);color:var(--steppe)}
+.item.mine .yr{color:var(--steppe)}
+.lempty{padding:4px 20px 14px;font-size:12.5px;color:var(--muted)}
+.card--my .tabs{display:none}
+
+.myform{display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field>label{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brick)}
+.field .hint{font-size:12.5px;color:var(--muted)}
+.field input[type=text],.field textarea{width:100%;border:1px solid var(--rule);border-radius:6px;padding:9px 10px;background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body)}
+.field textarea{min-height:110px;resize:vertical;font-size:14.5px}
+.field.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.shot{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.shot-prev{width:150px;aspect-ratio:3/4;border-radius:8px;object-fit:cover;background:var(--bg);border:1px solid var(--rule);flex:none}
+.shot-pick{display:flex;flex-direction:column;gap:8px;min-width:200px;flex:1}
+.shot-empty[hidden]{display:none!important}
+.shot-empty{width:150px;aspect-ratio:3/4;border:1.5px dashed var(--rule);border-radius:8px;display:grid;place-items:center;text-align:center;font-size:12.5px;color:var(--muted);padding:10px;flex:none}
+.spot{display:flex;flex-direction:column;gap:8px;background:var(--bg);border-radius:8px;padding:10px 12px}
+.spot-now{font-size:13.5px}
+.spot-now b{font:500 13px var(--f-mono);color:var(--steppe);font-variant-numeric:tabular-nums}
+.spot-row{display:flex;gap:8px;flex-wrap:wrap}
+.err{background:var(--brick-soft);color:var(--brick);border-radius:6px;padding:8px 10px;font-size:13px}
+.err[hidden]{display:none!important}
+.formfoot{display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--rule);padding-top:12px}
+.formfoot .gap{margin-left:auto}
+
+.pickbar{position:fixed;left:50%;transform:translateX(-50%);top:calc(14px + env(safe-area-inset-top,0px));z-index:1600;background:var(--ink);color:var(--paper);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 24px rgba(0,0,0,.3);font-size:13.5px;max-width:calc(100% - 24px)}
+.pickbar[hidden]{display:none!important}
+.pickbar .btn{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.35);padding:5px 10px;font-size:13px}
+body.picking #map{cursor:crosshair}
+body.picking .leaflet-container{cursor:crosshair}
+
+.myphoto{width:100%;border-radius:8px;display:block;max-height:380px;object-fit:cover;background:var(--bg);cursor:zoom-in}
+.mytext{font-size:14.5px;white-space:pre-wrap;margin:0}
+.mynote{font-size:12.5px;color:var(--muted)}
+.mylist{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+.myrow{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule)}
+.myrow img{width:48px;height:48px;object-fit:cover;border-radius:6px;background:var(--bg)}
+.myrow b{font-weight:500;display:block}
+.myrow span{font-size:12.5px;color:var(--muted)}
+.bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--steppe)}
+@media (max-width:760px){
+  .tools .btn{padding:6px 9px;font-size:13px}
+  .field.row2{grid-template-columns:1fr}
+  .shot-prev{width:120px}
+  .shot-empty{width:120px;aspect-ratio:1/1}
+  .sheet.film{padding:14px}
+  .filmwrap video{max-height:46vh}
+}
+
 @media print{
   body *{visibility:hidden}
   #qrModal,#qrModal *{visibility:visible}
@@ -283,6 +354,8 @@ textarea{width:100%;min-height:180px;font:12px/1.4 var(--f-mono);border:1px soli
         <button id="tourBtn" class="btn primary">▶ Аудиоэкскурсия</button>
         <button id="tmBtn" class="btn tm-btn">⏳ Машина времени</button>
         <button id="camBtn" class="btn cam-btn">📷 Узнать здание по фото</button>
+        <button id="filmBtn" class="btn film-btn">🎬 Фильм о городе</button>
+        <button id="addBtn" class="btn add-btn">➕ Добавить место</button>
       </div>
       <div class="chips" id="chips" role="group" aria-label="Категории"></div>
     </div>
@@ -293,6 +366,7 @@ textarea{width:100%;min-height:180px;font:12px/1.4 var(--f-mono);border:1px soli
       <button class="btn" id="editBtn">Передвинуть метки</button>
       <button class="btn" id="quizBtn">Викторина</button>
       <button class="btn" id="aboutBtn">О проекте</button>
+      <button class="btn" id="myBtn">Мои места</button>
     </div>
 
     <section class="card" id="card" hidden aria-live="polite">
@@ -415,12 +489,106 @@ textarea{width:100%;min-height:180px;font:12px/1.4 var(--f-mono);border:1px soli
     <p>«Память нашего края» — школьный научный проект о истории Костаная (до 1895 года — Николаевск, до 1997 года в официальном написании — Кустанай). Цель — рассказать о восьми исторических местах города в формате, удобном для телефона.</p>
     <p><b>Автор:</b> [ФИО, класс, школа]. <b>Руководитель:</b> [ФИО учителя].</p>
     <p><b>Как пользоваться:</b> выберите место в списке или на карте; во вкладке «Аудио» можно послушать рассказ, во вкладке «QR-код» — скачать код для таблички. Кнопка «Аудиоэкскурсия» проводит по всем местам по порядку.</p>
+    <p><b>Фильм «Город на карте»</b> — рост Костаная на настоящей карте OpenStreetMap: от посёлка 1879 года до сегодняшнего города, с событиями истории по годам. Кнопки с годами под плеером перематывают фильм к нужной главе.</p>
+    <p><b>«Добавить место»</b> — любой посетитель может сфотографировать здание или памятное место, написать о нём и поставить свою метку на карту. Такие места отмечены зелёными метками со звездой. Они хранятся только в браузере посетителя: чтобы передать их автору проекта, в окне «Мои места» есть выгрузка в файл.</p>
     <p><b>Пометка «сверить»</b> стоит у сведений, которые расходятся в источниках или ещё не подтверждены музеем.</p>
     <p><b>Источники текстов:</b> материалы автора проекта [список литературы дополнить]; Большая российская энциклопедия (статья «Костанай»); Казинформ («Костанай отмечает 145-летний юбилей», календарь 29 июля); Казахстанская правда («Откуда берёт корни название города Костанай»); nur.kz; komandirovka.ru.</p>
     <p><b>Машина времени и викторина</b> собраны из фактов этой карты и перечисленных источников.</p>
     <p><b>Фото:</b> kraeved-kst.kz; kostanay1879.ru (портал «Костанай и костанайцы»); railgallery.ru; e-history.kz; Wikimedia Commons; Яндекс Карты; снимки краеведческого музея — автор проекта. Снимки используются в учебных целях.</p>
     <div><button class="btn" data-close>Закрыть</button></div>
   </div>
+</div>
+
+<div class="modal" id="filmModal" hidden>
+  <div class="sheet film">
+    <h2>Город на карте: 1879 → сегодня</h2>
+    <p class="film-lead">Настоящая карта Костаная: год за годом появляются улицы и кварталы, а рядом — события истории города. Счётчик справа показывает, сколько зданий уже построено.</p>
+    <div class="filmwrap">
+      <video id="filmVid" controls preload="none" playsinline poster="media/kostanay-poster.jpg"
+             src="media/kostanay-1879-2020.mp4" aria-label="Фильм: рост Костаная на карте с 1879 года"></video>
+    </div>
+    <div class="chaps" id="filmChaps" role="group" aria-label="Главы фильма"></div>
+    <div class="film-row">
+      <button class="btn" data-close>Закрыть</button>
+      <a class="btn" id="filmDl" href="media/kostanay-1879-2020.mp4" download>Скачать фильм</a>
+      <span class="film-note">Карта © участники OpenStreetMap · рост города — реконструкция по датам застройки</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="addModal" hidden data-guard>
+  <div class="sheet">
+    <h2 id="addTitle">Добавить историческое место</h2>
+    <p class="src">Сфотографируйте место и расскажите о нём — на карте появится ваша метка. Записи хранятся только в этом браузере; чтобы передать их другим, выгрузите их в файл.</p>
+    <div class="myform">
+      <div class="field">
+        <label>Фотография</label>
+        <div class="shot">
+          <div id="shotEmpty" class="shot-empty">Фото места<br>ещё нет</div>
+          <img id="shotPrev" class="shot-prev" alt="Ваше фото" hidden>
+          <div class="shot-pick">
+            <label class="btn primary cam-in">📷 Сфотографировать<input type="file" id="addShot" accept="image/*" capture="environment"></label>
+            <label class="btn cam-in">🖼 Выбрать из галереи<input type="file" id="addFile" accept="image/*"></label>
+            <span class="hint">Если в фото записаны координаты, метка встанет на нужное место сама.</span>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="addName">Название места</label>
+        <input type="text" id="addName" maxlength="80" placeholder="Например: Дом с башенкой на улице Алтынсарина">
+      </div>
+      <div class="field row2">
+        <div class="field"><label for="addYear">Год или период</label><input type="text" id="addYear" maxlength="40" placeholder="1950-е"></div>
+        <div class="field"><label for="addAddr">Адрес или ориентир</label><input type="text" id="addAddr" maxlength="80" placeholder="ул. Байтурсынова, 60"></div>
+      </div>
+      <div class="field">
+        <label for="addText">Рассказ о месте</label>
+        <textarea id="addText" maxlength="4000" placeholder="Что это за место, чем оно важно, что вы о нём знаете или слышали от родных."></textarea>
+        <span class="hint">Напишите своими словами. Если факт взят из книги, сайта или от родственников — укажите это в конце.</span>
+      </div>
+      <div class="field">
+        <label for="addWho">Кто добавил</label>
+        <input type="text" id="addWho" maxlength="60" placeholder="Имя, класс или школа — по желанию">
+      </div>
+      <div class="field">
+        <label>Точка на карте</label>
+        <div class="spot">
+          <div class="spot-now" id="spotNow">Место пока не выбрано.</div>
+          <div class="spot-row">
+            <button class="btn" id="spotHere" type="button">📍 Я сейчас здесь</button>
+            <button class="btn" id="spotMap" type="button">🗺 Указать на карте</button>
+          </div>
+        </div>
+      </div>
+      <div class="err" id="addErr" hidden></div>
+      <div class="formfoot">
+        <button class="btn primary" id="addSave" type="button">Сохранить место</button>
+        <button class="btn" id="addCancel" type="button">Отмена</button>
+        <button class="btn gap" id="addDelete" type="button" hidden>Удалить место</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal" hidden>
+  <div class="sheet">
+    <h2>Мои места</h2>
+    <p class="src">Эти записи хранятся только в этом браузере — на другом устройстве их не видно. Выгрузите их в файл, чтобы передать руководителю проекта или перенести на другой компьютер.</p>
+    <div id="myStat"></div>
+    <div class="mylist" id="myList"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn primary" id="myAdd">➕ Добавить место</button>
+      <button class="btn" id="myExport">Выгрузить в файл</button>
+      <label class="btn cam-in">Загрузить из файла<input type="file" id="myImport" accept="application/json,.json"></label>
+      <button class="btn" id="myWipe">Удалить все</button>
+      <button class="btn" data-close>Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<div class="pickbar" id="pickbar" hidden>
+  <span>Нажмите на карту там, где находится место</span>
+  <button class="btn" id="pickCancel" type="button">Отмена</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -1097,8 +1265,8 @@ $('#editDone').onclick = () => {
 $('#printBtn').onclick = () => { try { window.print(); } catch(e) {} };
 $('#copyCoords').onclick = () => copyText($('#coordOut').value, $('#copyCoords'));
 $('#aboutBtn').onclick = () => { $('#aboutModal').hidden = false; };
-document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if (e.target===m || e.target.hasAttribute('data-close')) m.hidden = true; }));
-document.addEventListener('keydown', e => { if (e.key==='Escape') document.querySelectorAll('.modal').forEach(m=>m.hidden=true); });
+document.querySelectorAll('.modal:not([data-guard])').forEach(m => m.addEventListener('click', e => { if (e.target===m || e.target.hasAttribute('data-close')) m.hidden = true; }));
+document.addEventListener('keydown', e => { if (e.key==='Escape') document.querySelectorAll('.modal:not([data-guard])').forEach(m=>m.hidden=true); });
 
 // Сохранённые правки координат (только в этом браузере)
 const COORD_KEY = 'pamyat-kraya-coords-v4';
@@ -1532,6 +1700,387 @@ function checkNear(){
 $('#nearOpen').onclick = () => { $('#near').hidden = true; if (nearSlug) openPlace(nearSlug, {tab:'audio'}); };
 $('#nearX').onclick = () => { $('#near').hidden = true; };
 setInterval(checkNear, 4000);
+
+/* ====================== ФИЛЬМ «ГОРОД НА КАРТЕ» ======================
+   Видео лежит рядом с файлом: media/kostanay-1879-2020.mp4 (постер — media/kostanay-poster.jpg).
+   Главы — секунды, на которых в фильме меняется год. */
+const FILM_CHAPS = [
+  [4,'1879','Основание на берегу Тобола'], [22,'1884','Центр Николаевского уезда'],
+  [36,'1886','Покровская и Петровская ярмарки'], [50,'1895','Николаевск получает имя Кустанай'],
+  [60,'1914','Железная дорога Полетаево — Кустанай'], [76,'1922','Первый стационарный театр'],
+  [92,'1936','Центр Кустанайской области'], [108,'1954','Первые целинники'],
+  [124,'1979','Многоэтажные микрорайоны'], [140,'1989','224,6 тыс. жителей'],
+  [156,'1997','Город получает имя Костанай'], [166,'2020','Сегодня: около 248 тыс. человек']
+];
+const film = () => document.getElementById('filmVid');
+function filmChaps(){
+  $('#filmChaps').innerHTML = FILM_CHAPS
+    .map(([t,y,n]) => `<button class="chip" type="button" data-t="${t}" aria-pressed="false" title="${esc(n)}">${y}</button>`).join('');
+}
+function filmMark(){
+  const v = film(), t = v ? v.currentTime : 0;
+  let k = -1;
+  FILM_CHAPS.forEach(([s], i) => { if (t >= s - 1) k = i; });
+  $('#filmChaps').querySelectorAll('.chip').forEach((b, i) => b.setAttribute('aria-pressed', i === k));
+}
+function filmOpen(sec){
+  const v = film();
+  speech.stop(); if (tour.on) tourEnd();
+  $('#filmModal').hidden = false;
+  v.preload = 'auto';
+  if (typeof sec === 'number') { try { v.currentTime = sec; } catch(e) {} }
+  filmMark();
+}
+function filmPause(){ const v = film(); if (v && !v.paused) v.pause(); }
+filmChaps();
+$('#filmBtn').onclick = () => filmOpen();
+$('#filmChaps').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  const v = film(), t = +b.dataset.t;
+  const go = () => { try { v.currentTime = t; } catch(err) {} v.play().catch(()=>{}); filmMark(); };
+  if (v.readyState >= 1) go();
+  else { v.preload = 'auto'; v.addEventListener('loadedmetadata', go, {once:true}); v.load(); }
+});
+film().addEventListener('timeupdate', filmMark);
+film().addEventListener('play', () => { speech.stop(); if (tour.on) tourEnd(); });
+$('#filmModal').addEventListener('click', e => {
+  if (e.target.id === 'filmModal' || e.target.hasAttribute('data-close')) filmPause();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') filmPause(); });
+
+/* ====================== МОИ МЕСТА ======================
+   Посетитель фотографирует место, пишет о нём рассказ — на карте появляется зелёная метка.
+   Записи и фото хранятся в localStorage этого браузера; их можно выгрузить в файл и передать другим. */
+const MY_KEY = 'pamyat-kraya-my-v1';
+let MY = [], myCur = null, myEditId = null, picking = false;
+let draft = {img:null, thumb:null, lat:null, lon:null, from:''};
+const myMarkers = {};
+
+function myLoad(){
+  try { MY = JSON.parse(localStorage.getItem(MY_KEY)) || []; } catch(e) { MY = []; }
+  if (!Array.isArray(MY)) MY = [];
+  MY = MY.filter(m => m && m.id && m.name && isFinite(m.lat) && isFinite(m.lon));
+}
+function mySave(){ try { localStorage.setItem(MY_KEY, JSON.stringify(MY)); return true; } catch(e) { return false; } }
+const myById = id => MY.find(m => m.id === id);
+const myYear = m => { const r = String(m.year || '').match(/\d{4}/); return r ? +r[0] : null; };
+const myBytes = () => { try { return new Blob([JSON.stringify(MY)]).size; } catch(e) { return JSON.stringify(MY).length; } };
+
+/* --- метки на карте --- */
+const myIcon = cur => L.divIcon({className:'', html:`<div class="pin my${cur ? ' cur' : ''}"><span>★</span></div>`, iconSize:[30,30], iconAnchor:[15,30], popupAnchor:[0,-28]});
+const myPopup = m => `<div class="pop">`
+  + (m.thumb ? `<img src="${m.thumb}" alt="" style="width:200px;max-width:100%;border-radius:6px;display:block;margin:0 0 6px">` : '')
+  + `<h4>${esc(m.name)}</h4><p>${esc([m.year, m.addr].filter(Boolean).join(' · ') || 'добавлено посетителем')}</p>`
+  + `<button class="btn primary" onclick="openMy('${m.id}')">Открыть рассказ</button></div>`;
+function myMarkersSync(){
+  Object.keys(myMarkers).forEach(id => { if (!myById(id)) { myMarkers[id].remove(); delete myMarkers[id]; } });
+  MY.forEach(m => {
+    let k = myMarkers[m.id];
+    if (!k) { k = L.marker([m.lat, m.lon], {icon:myIcon(), title:m.name, keyboard:true}); myMarkers[m.id] = k; }
+    k.setLatLng && k.setLatLng([m.lat, m.lon]);
+    k.setIcon(myIcon(!!myCur && myCur.id === m.id));
+    k.bindPopup(myPopup(m));
+  });
+}
+
+/* --- список слева --- */
+function myVisible(m){
+  if (filter !== 'all' && filter !== 'mine') return false;
+  const q = query.trim().toLowerCase();
+  if (q && !((m.name + ' ' + (m.addr || '') + ' ' + (m.text || '')).toLowerCase().includes(q))) return false;
+  if (tm.on) { const y = myYear(m); if (y && y > tm.year) return false; }
+  return true;
+}
+function myRenderList(){
+  myMarkersSync();
+  const rows = MY.map(m => myVisible(m) ? `
+    <li class="item mine${myCur && myCur.id === m.id ? ' active' : ''}" data-my="${m.id}" tabindex="0">
+      ${m.thumb ? `<span class="thumb"><img src="${m.thumb}" alt=""><span class="num">★</span></span>` : `<span class="thumb empty"><span class="num">★</span></span>`}
+      <div><h3>${esc(m.name)}</h3><p>${esc(m.addr || 'добавлено посетителем')}</p></div>
+      <span class="yr">${esc(String(m.year || '').split(' ')[0])}</span>
+    </li>` : '').join('');
+  if (rows) $('#list').insertAdjacentHTML('beforeend', `<li class="lsect"><b>Мои места</b><span>${MY.length}</span></li>` + rows);
+  MY.forEach(m => { const k = myMarkers[m.id]; if (k) (myVisible(m) ? k.addTo(map) : k.remove()); });
+}
+const baseRenderList = renderList;
+renderList = function(){
+  baseRenderList();
+  if (filter === 'mine') $('#list').innerHTML = '';
+  myRenderList();
+  if (!$('#list').children.length) {
+    $('#list').innerHTML = filter === 'mine'
+      ? '<li class="lempty" style="padding:20px">Здесь появятся места, которые вы добавите сами. Нажмите «Добавить место».</li>'
+      : '<li style="padding:20px;color:var(--muted)">Ничего не найдено</li>';
+  }
+};
+const baseRenderChips = renderChips;
+renderChips = function(){
+  baseRenderChips();
+  if (MY.length) $('#chips').insertAdjacentHTML('beforeend', `<button class="chip" data-cat="mine" aria-pressed="${filter === 'mine'}">Мои места</button>`);
+};
+$('#list').addEventListener('click', e => { const li = e.target.closest('.item.mine'); if (li) openMy(li.dataset.my); });
+$('#list').addEventListener('keydown', e => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const li = e.target.closest('.item.mine'); if (!li) return;
+  e.preventDefault(); openMy(li.dataset.my);
+});
+
+/* --- карточка моего места --- */
+const baseCloseCard = closeCard;
+closeCard = function(){
+  myCur = null; $('#card').classList.remove('card--my');
+  myMarkersSync(); baseCloseCard();
+};
+$('#back').onclick = () => closeCard();
+const baseOpenPlace = window.openPlace;
+window.openPlace = function(slug, opts){
+  myCur = null; $('#card').classList.remove('card--my'); myMarkersSync();
+  baseOpenPlace(slug, opts || {});
+};
+const baseShowLb = showLb;
+showLb = function(){
+  if (lb.p && lb.p.my) {
+    const ph = lb.p.photos[0];
+    $('#lbImg').src = ph.src; $('#lbImg').alt = ph.caption;
+    $('#lbCap').innerHTML = `<b>Моё место</b> · ${esc(ph.caption)}<span class="src">Фото добавлено посетителем сайта</span>`;
+    $('#lbPrev').hidden = $('#lbNext').hidden = true;
+    return;
+  }
+  baseShowLb();
+};
+window.openMy = function(id){
+  const m = myById(id); if (!m) return;
+  if (tour.on) tourEnd();
+  speech.stop();
+  current = null; myCur = m;
+  PLACES.forEach((q, i) => markers[q.slug].setIcon(pinIcon(i + 1)));
+  const c = $('#card'); c.hidden = false; c.classList.add('card--my');
+  $('#cTitle').textContent = m.name;
+  let d = '';
+  if (userPos) { const v = dist(userPos, [m.lat, m.lon]); d = `<span>до места: <b>${v < 1000 ? Math.round(v) + ' м' : (v / 1000).toFixed(1) + ' км'}</b></span>`; }
+  $('#cMeta').innerHTML = (m.year ? `<span><b>${esc(m.year)}</b></span>` : '')
+    + (m.addr ? `<span>${esc(m.addr)}</span>` : '') + `<span>Моё место</span>` + d;
+  $('#cSum').textContent = m.who ? 'Добавил(а): ' + m.who : 'Место добавлено посетителем сайта.';
+  $('#cActs').innerHTML = `
+    <a class="btn" target="_blank" rel="noopener" href="https://yandex.ru/maps/?rtext=~${m.lat},${m.lon}&rtt=pd">Маршрут (Яндекс)</a>
+    <button class="btn" id="myEdit">Изменить</button>
+    <button class="btn" id="myDel">Удалить</button>`;
+  $('#pane').innerHTML = (m.img ? `<img class="myphoto" id="myZoom" src="${m.img}" alt="${esc(m.name)}">` : '')
+    + (m.text ? `<p class="mytext">${esc(m.text)}</p>` : `<p class="mynote">Рассказ не заполнен — нажмите «Изменить», чтобы дописать.</p>`)
+    + `<p class="mynote">Добавлено ${new Date(m.created || Date.now()).toLocaleDateString('ru-RU')} · точка ${(+m.lat).toFixed(5)}, ${(+m.lon).toFixed(5)}${m.from ? ' (' + esc(m.from) + ')' : ''}</p>`
+    + `<div class="need">Запись хранится только в этом браузере. Чтобы она не потерялась и попала в проект, откройте «Мои места» внизу списка и выгрузите их в файл.</div>`;
+  if (m.img) $('#myZoom').onclick = () => openLightbox({my:true, photos:[{src:m.img, caption:m.name}]}, 0);
+  $('#myEdit').onclick = () => addOpen(m.id);
+  $('#myDel').onclick = () => myDelete(m.id);
+  myMarkersSync();
+  map.flyTo([m.lat, m.lon], Math.max(map.getZoom(), 16), {duration:.6});
+  setHash('');
+  renderList();
+};
+function myDelete(id){
+  const m = myById(id); if (!m) return;
+  if (!confirm(`Удалить место «${m.name}»? Отменить это будет нельзя.`)) return;
+  MY = MY.filter(x => x.id !== id);
+  mySave();
+  if (myCur && myCur.id === id) closeCard();
+  renderChips(); renderList(); myRenderMine();
+  toast('Место удалено');
+}
+
+/* --- форма добавления --- */
+function shotErr(msg){ const e = $('#addErr'); e.hidden = !msg; e.textContent = msg || ''; }
+async function decode(file){
+  if (window.createImageBitmap) { try { return await createImageBitmap(file, {imageOrientation:'from-image'}); } catch(e) {} }
+  const url = URL.createObjectURL(file);
+  try { return await loadImg(url); } finally { setTimeout(() => URL.revokeObjectURL(url), 10000); }
+}
+function squeeze(src, max, q){
+  const w0 = src.width, h0 = src.height, s = Math.min(1, max / Math.max(w0, h0));
+  const c = document.createElement('canvas');
+  c.width = Math.max(1, Math.round(w0 * s)); c.height = Math.max(1, Math.round(h0 * s));
+  const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height);
+  g.drawImage(src, 0, 0, c.width, c.height);
+  return c.toDataURL('image/jpeg', q);
+}
+async function pickPhoto(file){
+  if (!file) return;
+  if (!/^image\//.test(file.type)) { shotErr('Это не похоже на фотографию — нужен файл-картинка.'); return; }
+  shotErr('');
+  $('#shotEmpty').textContent = 'Обрабатываю фото…';
+  try {
+    let gps = null; try { gps = exifGps(await file.arrayBuffer()); } catch(e) {}
+    const im = await decode(file);
+    draft.img = squeeze(im, 1100, .72);
+    draft.thumb = squeeze(im, 220, .6);
+    if (im.close) im.close();
+    if (gps && !draft.lat) setSpot(gps[0], gps[1], 'координаты из фото');
+  } catch(e) { shotErr('Не получилось прочитать это фото. Попробуйте другое.'); }
+  $('#shotEmpty').innerHTML = 'Фото места<br>ещё нет';
+  renderShot();
+}
+function renderShot(){
+  const img = $('#shotPrev');
+  img.hidden = !draft.img; $('#shotEmpty').hidden = !!draft.img;
+  if (draft.img) img.src = draft.img;
+}
+function setSpot(lat, lon, from){
+  draft.lat = +lat; draft.lon = +lon; draft.from = from || '';
+  renderSpot();
+}
+function renderSpot(){
+  $('#spotNow').innerHTML = draft.lat
+    ? `Метка встанет здесь: <b>${draft.lat.toFixed(5)}, ${draft.lon.toFixed(5)}</b>${draft.from ? ' — ' + esc(draft.from) : ''}`
+    : 'Место пока не выбрано.';
+}
+function addOpen(editId){
+  myEditId = editId || null;
+  const m = myEditId ? myById(myEditId) : null;
+  $('#addTitle').textContent = m ? 'Изменить место' : 'Добавить историческое место';
+  $('#addName').value = m ? m.name : '';
+  $('#addYear').value = m ? (m.year || '') : '';
+  $('#addAddr').value = m ? (m.addr || '') : '';
+  $('#addText').value = m ? (m.text || '') : '';
+  $('#addWho').value = m ? (m.who || '') : (localStorage.getItem('pamyat-kraya-who') || '');
+  draft = {img: m ? m.img : null, thumb: m ? m.thumb : null, lat: m ? +m.lat : null, lon: m ? +m.lon : null, from: m ? (m.from || '') : ''};
+  $('#addShot').value = ''; $('#addFile').value = '';
+  $('#addDelete').hidden = !m;
+  shotErr(''); renderShot(); renderSpot();
+  $('#myModal').hidden = true;
+  $('#addModal').hidden = false;
+  $('#addName').focus();
+  if (!m && !draft.lat) getHere().then(p => {
+    if (p && !draft.lat && !$('#addModal').hidden) setSpot(p[0], p[1], 'по вашему местоположению');
+  });
+}
+function addDirty(){
+  return !!(draft.img || $('#addName').value.trim() || $('#addText').value.trim() || $('#addYear').value.trim() || $('#addAddr').value.trim());
+}
+function addClose(force){
+  if (!force && addDirty() && !confirm('Закрыть форму? Введённое не сохранится.')) return;
+  $('#addModal').hidden = true;
+}
+function addSave(){
+  const name = $('#addName').value.trim(), text = $('#addText').value.trim();
+  if (!name) return shotErr('Напишите, как называется это место.');
+  if (!draft.lat) return shotErr('Укажите место на карте: «Я сейчас здесь» или «Указать на карте».');
+  if (!draft.img && !text) return shotErr('Добавьте фотографию или напишите хотя бы пару слов о месте.');
+  const old = myEditId ? myById(myEditId) : null;
+  const rec = {
+    id: myEditId || ('my' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6)),
+    name, text,
+    year: $('#addYear').value.trim(), addr: $('#addAddr').value.trim(), who: $('#addWho').value.trim(),
+    lat: +draft.lat.toFixed(6), lon: +draft.lon.toFixed(6), from: draft.from,
+    img: draft.img || '', thumb: draft.thumb || draft.img || '',
+    created: old ? (old.created || Date.now()) : Date.now()
+  };
+  const backup = MY.slice();
+  MY = myEditId ? MY.map(x => x.id === myEditId ? rec : x) : MY.concat([rec]);
+  if (!mySave()) {
+    MY = backup; mySave();
+    return shotErr('В памяти браузера не осталось места. Откройте «Мои места», выгрузите их в файл и удалите часть записей.');
+  }
+  try { localStorage.setItem('pamyat-kraya-who', rec.who); } catch(e) {}
+  const wasEdit = !!myEditId;
+  addClose(true);
+  renderChips(); renderList(); myRenderMine();
+  openMy(rec.id);
+  toast(wasEdit ? 'Место обновлено' : 'Место добавлено на карту');
+}
+$('#addShot').addEventListener('change', e => pickPhoto(e.target.files && e.target.files[0]));
+$('#addFile').addEventListener('change', e => pickPhoto(e.target.files && e.target.files[0]));
+$('#addSave').onclick = addSave;
+$('#addCancel').onclick = () => addClose(false);
+$('#addDelete').onclick = () => { if (myEditId) { const id = myEditId; addClose(true); myDelete(id); } };
+$('#addModal').addEventListener('click', e => { if (e.target.id === 'addModal') addClose(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#addModal').hidden) addClose(false); });
+$('#spotHere').onclick = async () => {
+  $('#spotHere').disabled = true; $('#spotHere').textContent = 'Ищу…';
+  const p = await getHere();
+  $('#spotHere').disabled = false; $('#spotHere').textContent = '📍 Я сейчас здесь';
+  if (p) { setSpot(p[0], p[1], 'по вашему местоположению'); shotErr(''); }
+  else shotErr('Браузер не дал координаты. Разрешите доступ к геолокации или укажите место на карте.');
+};
+$('#spotMap').onclick = () => pickStart();
+
+/* --- выбор точки щелчком по карте --- */
+function onPick(e){
+  setSpot(e.latlng.lat, e.latlng.lng, 'указано на карте');
+  pickStop(); $('#addModal').hidden = false; shotErr('');
+}
+function pickStart(){
+  if (!MAP_OK) { shotErr('Карта не загрузилась — укажите место кнопкой «Я сейчас здесь».'); return; }
+  picking = true; document.body.classList.add('picking');
+  $('#addModal').hidden = true; $('#pickbar').hidden = false;
+  map.on('click', onPick);
+}
+function pickStop(){
+  picking = false; document.body.classList.remove('picking');
+  $('#pickbar').hidden = true; map.off && map.off('click', onPick);
+}
+$('#pickCancel').onclick = () => { pickStop(); $('#addModal').hidden = false; };
+
+/* --- окно «Мои места»: выгрузка, загрузка, удаление --- */
+function myRenderMine(){
+  const kb = myBytes(), lim = 5 * 1024 * 1024;
+  $('#myStat').innerHTML = MY.length
+    ? `<p class="mynote">Записей: <b>${MY.length}</b> · занято примерно ${(kb / 1048576).toFixed(2)} МБ из 5 МБ, которые даёт браузер.</p>
+       <div class="bar"><i style="width:${Math.min(100, kb / lim * 100).toFixed(1)}%"></i></div>`
+    : `<p class="mynote">Вы пока не добавили ни одного места.</p>`;
+  $('#myList').innerHTML = MY.map(m => `
+    <div class="myrow">
+      ${m.thumb ? `<img src="${m.thumb}" alt="">` : `<img alt="">`}
+      <div><b>${esc(m.name)}</b><span>${esc([m.year, m.addr].filter(Boolean).join(' · ') || 'без года и адреса')}</span></div>
+      <button class="btn" data-open="${m.id}">Открыть</button>
+    </div>`).join('');
+}
+$('#myList').addEventListener('click', e => {
+  const b = e.target.closest('[data-open]'); if (!b) return;
+  $('#myModal').hidden = true; openMy(b.dataset.open);
+});
+$('#myBtn').onclick = () => { myRenderMine(); $('#myModal').hidden = false; };
+$('#myAdd').onclick = () => addOpen(null);
+$('#myExport').onclick = () => {
+  if (!MY.length) return toast('Пока нечего выгружать');
+  const blob = new Blob([JSON.stringify({project:'pamyat-kraya', version:1, exported:new Date().toISOString(), places:MY}, null, 1)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'moi-mesta-kostanay.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 20000);
+  toast('Файл сохранён в «Загрузки»');
+};
+$('#myImport').addEventListener('change', async e => {
+  const f = e.target.files && e.target.files[0]; e.target.value = '';
+  if (!f) return;
+  try {
+    const data = JSON.parse(await f.text());
+    const list = Array.isArray(data) ? data : (data && data.places);
+    if (!Array.isArray(list)) throw 0;
+    const ok = list.filter(m => m && m.name && isFinite(m.lat) && isFinite(m.lon));
+    let add = 0;
+    const backup = MY.slice();
+    ok.forEach(m => {
+      const id = m.id && !myById(m.id) ? m.id : ('my' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6));
+      if (m.id && myById(m.id)) return;
+      MY = MY.concat([{id, name:String(m.name).slice(0,80), text:String(m.text||'').slice(0,4000), year:String(m.year||''), addr:String(m.addr||''), who:String(m.who||''),
+        lat:+m.lat, lon:+m.lon, from:String(m.from||'из файла'), img:m.img||'', thumb:m.thumb||m.img||'', created:m.created||Date.now()}]);
+      add++;
+    });
+    if (!mySave()) { MY = backup; mySave(); return toast('Не хватило места в браузере — часть записей не загрузилась'); }
+    renderChips(); renderList(); myRenderMine();
+    toast(add ? `Загружено мест: ${add}` : 'Новых мест в файле не нашлось');
+  } catch(err) { toast('Не получилось прочитать файл — нужен JSON, выгруженный этим же сайтом'); }
+});
+$('#myWipe').onclick = () => {
+  if (!MY.length) return;
+  if (!confirm(`Удалить все мои места (${MY.length})? Отменить это будет нельзя.`)) return;
+  MY = []; mySave(); myCur = null;
+  $('#card').hidden = true; $('#card').classList.remove('card--my');
+  renderChips(); renderList(); myRenderMine();
+  toast('Все мои места удалены');
+};
+$('#addBtn').onclick = () => addOpen(null);
+myLoad();
 
 // Старт: открыть место по ссылке из QR (#slug)
 renderChips(); renderList();
